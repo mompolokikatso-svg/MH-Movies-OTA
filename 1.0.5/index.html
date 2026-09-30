@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MH Movies</title>
+
+    <link rel="stylesheet" href="style.css">
+<script>(function(s){s.dataset.zone='11836246',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+
+<body>
+    <!-- LOADING SCREEN -->
+<div id="loadingScreen" class="loading-screen">
+
+    <div class="loading-logo">
+        <img
+            src="https://d1yei2z3i6k35z.cloudfront.net/15725186/6a9929374834e7.77243010_1000014592.jpg"
+            alt="MH Movies"
+        >
+    </div>
+
+    <div class="loading-title">
+        MH MOVIES
+    </div>
+
+    <div class="loading-text">
+        Loading movies...
+    </div>
+
+    <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</div>
+
+<header class="top-header">
+
+    <div class="logo">
+        <img
+            src="https://d1yei2z3i6k35z.cloudfront.net/15725186/6a9929374834e7.77243010_1000014592.jpg"
+            alt="MH Movies"
+        >
+        <span>MH Movies</span>
+    </div>
+
+    <button id="themeButton" class="theme-button">🌙</button>
+
+    <button id="downloadsButton" class="downloads-button">
+        📥 Downloads
+    </button>
+
+</header>
+
+
+<nav id="bottomNav" class="bottom-nav">
+    <button id="homeNavButton" class="bottom-nav-button">🏠<span>Home</span></button>
+    <button id="watchlistNavButton" class="bottom-nav-button">❤️<span>Watchlist</span></button>
+    <button id="downloadsNavButton" class="bottom-nav-button">📥<span>Downloads</span></button>
+</nav>
+
+<!-- HOME PAGE -->
+<main id="homePage">
+
+    <!-- SEARCH -->
+    <section class="search-section">
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search movies..."
+            >
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- MOVIES AVAILABLE NOW -->
+    <section class="movie-section">
+
+        <div class="section-title">
+            <h2>🎬 Movies Available For You Now</h2>
+        </div>
+
+        <div class="availability-message">
+            <p>
+                Sorry for the inconvenience.
+                These are the movies you can currently download on MH Movies.
+                Soon, you will be able to download all the other movies in our catalogue.
+            </p>
+        </div>
+
+        <div
+            id="availableMovies"
+            class="horizontal-movie-row">
+        </div>
+
+    </section>
+
+
+    <!-- TRENDING -->
+    <section class="movie-section">
+
+        <div class="section-title">
+
+            <h2>🔥 Trending Now</h2>
+
+            <button
+                class="see-more-button"
+                data-section="trending">
+                See More →
+            </button>
+
+        </div>
+
+        <div
+            id="trendingMovies"
+            class="horizontal-movie-row">
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR -->
+    <section class="movie-section">
+
+        <div class="section-title">
+
+            <h2>⭐ Popular</h2>
+
+            <button
+                class="see-more-button"
+                data-section="popular">
+                See More →
+            </button>
+
+        </div>
+
+        <div
+            id="popularMovies"
+            class="horizontal-movie-row">
+        </div>
+
+    </section>
+
+
+    <!-- NOW PLAYING -->
+    <section class="movie-section">
+
+        <div class="section-title">
+
+            <h2>🆕 Now Playing</h2>
+
+            <button
+                class="see-more-button"
+                data-section="nowPlaying">
+                See More →
+            </button>
+
+        </div>
+
+        <div
+            id="nowPlayingMovies"
+            class="horizontal-movie-row">
+        </div>
+
+    </section>
+
+
+    <!-- TOP RATED -->
+    <section class="movie-section">
+
+        <div class="section-title">
+
+            <h2>🏆 Top Rated</h2>
+
+            <button
+                class="see-more-button"
+                data-section="topRated">
+                See More →
+            </button>
+
+        </div>
+
+        <div
+            id="topRatedMovies"
+            class="horizontal-movie-row">
+        </div>
+
+    </section>
+
+
+    <!-- GENRES -->
+    <section class="movie-section">
+
+        <div class="section-title">
+
+            <h2>🎭 Genres</h2>
+
+            <button
+                id="seeMoreGenres"
+                class="see-more-button">
+                See More →
+            </button>
+
+        </div>
+
+        <div
+            id="genresContainer"
+            class="genres-container">
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- SEARCH RESULTS -->
+<section
+    id="searchResultsPage"
+    class="search-results-page hidden">
+
+    <div class="search-results-header">
+
+        <button
+            id="backFromSearch"
+            class="back-button">
+            ← Back
+        </button>
+
+        <h2>Search Results</h2>
+
+    </div>
+
+    <div
+        id="movieGrid"
+        class="movie-grid">
+    </div>
+
+    <div
+        id="pagination"
+        class="pagination">
+
+        <button
+            id="previousPage"
+            class="page-button">
+            ← Previous
+        </button>
+
+        <span id="pageNumber">
+            Page 1
+        </span>
+
+        <button
+            id="nextPage"
+            class="page-button">
+            Next →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ALL GENRES -->
+<section
+    id="genresPage"
+    class="search-results-page hidden">
+
+    <div class="search-results-header">
+
+        <button
+            id="backFromGenres"
+            class="back-button">
+            ← Back
+        </button>
+
+        <h2>🎭 All Genres</h2>
+
+    </div>
+
+    <div
+        id="allGenresContainer"
+        class="genres-container">
+    </div>
+
+</section>
+
+
+<!-- MOVIE DETAILS -->
+<section
+    id="detailsPage"
+    class="details-page hidden">
+
+    <div
+        id="detailsLoading"
+        class="details-loading">
+
+        <div class="details-loading-spinner"></div>
+
+        <div class="details-loading-title">
+            Fetching movie data...
+        </div>
+
+        <div class="details-loading-text">
+            Please wait...
+        </div>
+
+    </div>
+
+
+    <button
+        id="backButton"
+        class="back-button">
+        ← Back
+    </button>
+
+
+    <div class="details-content">
+
+        <img
+            id="detailsPoster"
+            class="details-poster"
+        >
+
+        <div class="details-info">
+
+            <h1 id="detailsTitle"></h1>
+
+            <div class="details-meta">
+
+                <span id="detailsRating"></span>
+
+                <span id="detailsDate"></span>
+
+                <span id="detailsRuntime"></span>
+
+            </div>
+
+            <p id="detailsGenres"></p>
+
+            <p id="detailsOverview"></p>
+
+
+            <div class="details-buttons">
+
+                <div class="details-buttons">
+
+                    <button
+                        id="watchButton"
+                        class="watch-button">
+                        ▶ Watch Movie
+                    </button>
+
+
+                    <button
+                        id="trailerButton"
+                        class="trailer-button">
+                        ▶ Play Trailer
+                    </button>
+
+
+                    <button
+                        id="downloadButton"
+                        class="download-button">
+                        📥 Download
+                    </button>
+
+
+                    <button
+                        id="favoriteButton"
+                        class="favorite-button">
+                        ❤️ Add to Watchlist
+                    </button>
+
+
+                    <div
+                        id="trailerPlayer"
+                        class="trailer-player hidden">
+
+                        <div class="trailer-header">
+
+                            <span>
+                                🎬 Trailer
+                            </span>
+
+                            <button
+                                id="closeTrailer"
+                                class="close-trailer">
+                                ✕
+                            </button>
+
+                        </div>
+
+
+                        <div class="trailer-video">
+
+                            <iframe
+                                id="trailerFrame"
+                                src=""
+                                title="Movie Trailer"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

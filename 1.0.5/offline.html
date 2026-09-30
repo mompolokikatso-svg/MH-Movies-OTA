@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MH Movies - Offline</title>
+
+    <link rel="stylesheet" href="offline.css">
+
+</head>
+
+<body>
+
+    <header class="offline-header">
+
+        <div class="offline-logo">
+
+            <img
+                src="https://d1yei2z3i6k35z.cloudfront.net/15725186/6a9929374834e7.77243010_1000014592.jpg"
+                alt="MH Movies"
+            >
+
+            <span>MH Movies</span>
+
+        </div>
+
+    </header>
+
+
+    <main class="offline-page">
+
+        <div id="connectionMessage">
+
+    <div class="offline-icon">
+        📴
+    </div>
+
+    <h1>
+        You're Offline
+    </h1>
+
+    <p>
+        No internet connection is available.
+    </p>
+
+    <p>
+        You can still watch your downloaded movies.
+    </p>
+
+    <button
+        id="retryButton"
+        class="offline-button"
+    >
+        🔄 Try Again
+    </button>
+
+    <button
+        id="backHomeButton"
+        class="offline-button secondary-button"
+    >
+        🏠 Back to Home
+    </button>
+
+</div>
+
+
+        <section class="downloads-section">
+
+    <!-- DOWNLOADING -->
+    <div class="download-group">
+
+        <h2>⬇️ Downloading</h2>
+
+        <div
+            id="activeDownloads"
+            class="download-list"
+        >
+
+            <p class="empty-message">
+                No active downloads
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUEUE -->
+    <div class="download-group">
+
+        <h2>⏳ Queue</h2>
+
+        <div
+            id="queuedDownloads"
+            class="download-list"
+        >
+
+            <p class="empty-message">
+                Download queue is empty
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMPLETED -->
+    <div class="download-group">
+
+        <h2>✅ Completed</h2>
+
+        <div
+            id="completedDownloads"
+            class="download-list"
+        >
+
+            <p class="empty-message">
+                No downloaded movies
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <script
+    type="module"
+    src="offline.js"
+></script>
+
+</body>
+
+</html>
