@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>MH Movies - Player</title>
+
+<link
+    rel="stylesheet"
+    href="play.css"
+>
+
+</head><body><!-- =====================================================
+     PLAYER HEADER
+====================================================== -->
+
+<header class="player-header">
+
+    <button
+        id="backButton"
+        class="back-button"
+    >
+        ←
+    </button>
+
+
+    <div class="player-logo">
+
+        <img
+            src="https://d1yei2z3i6k35z.cloudfront.net/15725186/6a9929374834e7.77243010_1000014592.jpg"
+            alt="MH Movies"
+        >
+
+        <span>
+            MH MOVIES
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PLAYER PAGE
+====================================================== -->
+
+<main class="player-page">
+
+
+    <!-- =================================================
+         VIDEO / EMBED PLAYER
+    ================================================== -->
+
+    <section class="video-section">
+
+
+        <div
+            id="videoContainer"
+            class="video-container"
+        >
+
+
+            <!-- Native video -->
+
+            <video
+    id="videoPlayer"
+    class="video-player"
+    playsinline
+    preload="metadata"
+    style="display:none;"
+></video>
+
+
+            <!-- MH Movies custom subtitles -->
+            <div
+                id="subtitleOverlay"
+                class="subtitle-overlay hidden"
+                aria-live="polite"
+            ></div>
+
+            <div
+                id="subtitleSettings"
+                class="subtitle-settings hidden"
+            >
+                <div class="subtitle-settings-header">
+                    <strong>Subtitle Settings</strong>
+                    <button
+                        id="closeSubtitleSettings"
+                        class="control-button"
+                        type="button"
+                    >×</button>
+                </div>
+
+                <label>
+                    <span>Subtitles</span>
+                    <select id="subtitleEnabled">
+                        <option value="on">On</option>
+                        <option value="off">Off</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Font</span>
+                    <select id="subtitleFont">
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="sans-serif">Sans Serif</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Size</span>
+                    <select id="subtitleSize">
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                        <option value="xlarge">Extra Large</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Style</span>
+                    <select id="subtitleStyle">
+                        <option value="outline" selected>Outline</option>
+                        <option value="box">Black Box</option>
+                        <option value="shadow">Shadow</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Delay</span>
+                    <select id="subtitleDelay">
+                        <option value="-5">-5 seconds</option>
+                        <option value="-2">-2 seconds</option>
+                        <option value="-1">-1 second</option>
+                        <option value="0" selected>0 seconds</option>
+                        <option value="1">+1 second</option>
+                        <option value="2">+2 seconds</option>
+                        <option value="5">+5 seconds</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Position</span>
+                    <select id="subtitlePosition">
+                        <option value="bottom" selected>Bottom</option>
+                        <option value="middle">Middle</option>
+                        <option value="top">Top</option>
+                    </select>
+                </label>
+            </div>
+
+            <!-- Embed playback -->
+
+            <iframe
+                id="videoFrame"
+                class="video-frame"
+                style="width:100%;height:100%;border:0;"
+                allow="autoplay; fullscreen; encrypted-media"
+                allowfullscreen
+                referrerpolicy="origin"
+            ></iframe>
+
+
+            <!-- Loading -->
+
+            <div
+                id="loadingOverlay"
+                class="player-overlay hidden"
+            >
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Loading movie...
+                </p>
+
+            </div>
+
+
+            <!-- No Source -->
+
+            <div
+                id="noSourceOverlay"
+                class="player-overlay hidden"
+            >
+
+                <div class="overlay-icon">
+                    🎬
+                </div>
+
+                <h2>
+                    Movie Not Available
+                </h2>
+
+                <p>
+                    A video source is not available yet.
+                </p>
+
+            </div>
+
+
+            <!-- Error -->
+
+            <div
+                id="errorOverlay"
+                class="player-overlay hidden"
+            >
+
+                <div class="overlay-icon">
+                    ⚠️
+                </div>
+
+                <h2>
+                    Unable to Play
+                </h2>
+
+                <p>
+                    The movie could not be loaded.
+                </p>
+
+                <button
+                    id="retryPlayButton"
+                    class="player-button"
+                >
+                    🔄 Retry
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PLAYER CONTROLS
+        ================================================== -->
+
+        <div
+            id="playerControls"
+            class="player-controls"
+            style="display:none;"
+        >
+
+            <button
+                id="playPauseButton"
+                class="control-button"
+                type="button"
+            >
+                ▶
+            </button>
+
+
+            <span
+                id="currentTime"
+                class="time"
+            >
+                0:00
+            </span>
+
+
+            <input
+                id="seekBar"
+                class="seek-bar"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+
+            <span
+                id="duration"
+                class="time"
+            >
+                0:00
+            </span>
+
+
+            <button
+                id="muteButton"
+                class="control-button"
+                type="button"
+            >
+                🔊
+            </button>
+
+
+            <button id="subtitleButton" class="control-button" type="button">CC</button>
+            <button
+                id="fullscreenButton"
+                class="control-button"
+                type="button"
+            >
+                ⛶
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         DOWNLOAD MOVIE
+    ================================================== -->
+
+    <div
+        id="downloadSection"
+        class="download-section"
+        style="display:flex;"
+    >
+
+        <div
+        id="downloadStatus"
+        class="download-status"
+        aria-live="polite"
+    ></div>
+
+        <button
+            id="downloadMovieButton"
+            class="download-button"
+            type="button"
+        >
+            ⬇️ Download Movie
+        </button>
+
+    </div>
+
+    <!-- =================================================
+         MOVIE INFORMATION
+    ================================================== -->
+
+    <section class="movie-info">
+
+
+        <img
+            id="moviePoster"
+            class="movie-poster"
+            src=""
+            alt=""
+            style="display:none;"
+        >
+
+        <h1 id="movieTitle">
+            Movie
+        </h1>
+
+
+        <div
+            id="movieMeta"
+            class="movie-meta"
+        >
+            MH Movies
+        </div>
+
+
+        <p
+            id="movieOverview"
+            class="movie-overview"
+        >
+        </p>
+
+
+    </section>
+</main>
+
+
+<script
+    src="play.js"
+></script>
+
+</body></html>
