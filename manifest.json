@@ -1,7 +1,7 @@
 {
-  "version": "1.1.1",
-  "package": "MH-Movies-1.1.1.zip",
-  "sha256": "e1f760ef8267a29d97768afd98766d2d2a8b3608d787c70b403112ebe8f41fdd",
+  "version": "1.1.2",
+  "package": "MH-Movies-1.1.2.zip",
+  "sha256": "4a4c4961709f97b8925302c81edf72b50eb4b47f22e16b08dbf53531d6725495",
   "minApkVersionCode": 4,
-  "packageUrl": "https://raw.githubusercontent.com/mompolokikatso-svg/MH-Movies-OTA/main/MH-Movies-1.1.1.zip"
+  "packageUrl": "https://raw.githubusercontent.com/mompolokikatso-svg/MH-Movies-OTA/main/MH-Movies-1.1.2.zip"
 }

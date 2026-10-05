@@ -1,0 +1,12 @@
+#mhExtractorBall {
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#mhExtractorBall:active {
+  transform: scale(0.9);
+}
+
+#mhExtractorBall:hover {
+  opacity: 0.9;
+}
