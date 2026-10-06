@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH Movies — Series Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <button id="seriesDetailsBack" class="back-button">←</button>
+        <div class="logo">
+            <img src="https://d1yei2z3i6k35z.cloudfront.net/15725186/6a9929374834e7.77243010_1000014592.jpg" alt="MH Movies">
+            <span>MH Movies</span>
+        </div>
+        <button id="themeButton" class="theme-button">🌙</button>
+    </header>
+
+    <main class="details-page" id="seriesDetailsMain" style="display:block">
+        <div id="seriesDetailsLoading" class="details-loading">
+            <div class="details-loading-spinner"></div>
+            <div class="details-loading-title">Fetching series...</div>
+        </div>
+
+        <div class="details-content" id="seriesDetailsContent" style="display:none">
+            <img id="seriesPoster" class="details-poster">
+            <div class="details-info">
+                <h1 id="seriesTitle"></h1>
+                <div class="movie-meta">
+                    <span id="seriesRating"></span>
+                    <span id="seriesYear"></span>
+                </div>
+                <p id="seriesOverview" class="details-overview"></p>
+                <div id="seasonList" class="season-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="series-details.js"></script>
+</body>
+</html>
