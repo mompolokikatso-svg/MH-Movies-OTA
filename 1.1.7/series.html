@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH Movies — Series</title>
+    <link rel="stylesheet" href="style.css">
+<script>(function(s){s.dataset.zone="11836246",s.src="https://nap5k.com/tag.min.js"})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement("script")))</script>
+</head>
+<body>
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <img src="https://d1yei2z3i6k35z.cloudfront.net/15725186/6a9929374834e7.77243010_1000014592.jpg" alt="MH Movies">
+            <h1>MH MOVIES</h1>
+            <p>Loading series...</p>
+        </div>
+    </div>
+
+    <header class="app-header">
+        <div class="logo">
+            <img src="https://d1yei2z3i6k35z.cloudfront.net/15725186/6a9929374834e7.77243010_1000014592.jpg" alt="MH Movies">
+            <span>MH Movies</span>
+        </div>
+        <button id="themeButton" class="theme-button">🌙</button>
+    </header>
+
+    <nav id="bottomNav" class="bottom-nav">
+        <button id="homeNavButton" class="bottom-nav-button">🏠<span>Home</span></button>
+        <button id="seriesNavButton" class="bottom-nav-button">📺<span>Series</span></button>
+        <button id="watchlistNavButton" class="bottom-nav-button">❤️<span>Watchlist</span></button>
+        <button id="downloadsNavButton" class="bottom-nav-button">📥<span>Downloads</span></button>
+    </nav>
+
+    <main id="seriesPage">
+        <section class="search-section">
+            <div class="search-box">
+                <input type="text" id="seriesSearchInput" placeholder="Search series...">
+                <button id="seriesSearchButton">🔍</button>
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <div class="section-title">
+                <h2>🌸 Anime</h2>
+                <button class="see-more-button" data-section="anime">See More →</button>
+            </div>
+            <div id="animeSeries" class="horizontal-movie-row"></div>
+        </section>
+
+        <section class="movie-section">
+            <div class="section-title">
+                <h2>🔥 Trending Series</h2>
+                <button class="see-more-button" data-section="trending">See More →</button>
+            </div>
+            <div id="trendingSeries" class="horizontal-movie-row"></div>
+        </section>
+
+        <section class="movie-section">
+            <div class="section-title">
+                <h2>⭐ Popular Series</h2>
+                <button class="see-more-button" data-section="popular">See More →</button>
+            </div>
+            <div id="popularSeries" class="horizontal-movie-row"></div>
+        </section>
+
+        <section class="movie-section">
+            <div class="section-title">
+                <h2>🏆 Top Rated Series</h2>
+                <button class="see-more-button" data-section="topRated">See More →</button>
+            </div>
+            <div id="topRatedSeries" class="horizontal-movie-row"></div>
+        </section>
+
+        <section class="movie-section">
+            <div class="section-title">
+                <h2>📡 Airing Today</h2>
+                <button class="see-more-button" data-section="airing">See More →</button>
+            </div>
+            <div id="airingSeries" class="horizontal-movie-row"></div>
+        </section>
+
+        <!-- GENRES -->
+        <section class="movie-section">
+            <div class="section-title">
+                <h2>🎭 Genres</h2>
+            </div>
+            <div id="seriesGenres" class="genres-container"></div>
+        </section>
+
+    </main>
+
+    <script src="series.js"></script>
+</body>
+</html>

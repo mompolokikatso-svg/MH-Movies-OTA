@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH Movies — Downloaded Episodes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="offline.css">
+</head>
+<body>
+    <header class="top-header">
+        <button id="downloadedBackButton" class="back-button">←</button>
+        <div class="logo">
+            <img src="https://d1yei2z3i6k35z.cloudfront.net/15725186/6a9929374834e7.77243010_1000014592.jpg" alt="MH Movies">
+            <span>MH Movies</span>
+        </div>
+        <button id="themeButton" class="theme-button">🌙</button>
+    </header>
+
+    <main>
+        <section class="details-content">
+            <div class="downloaded-series-header">
+                <img id="downloadedPoster" class="details-poster" alt="">
+                <h1 id="downloadedSeriesName">Series</h1>
+                <div id="downloadedSeriesMeta" class="movie-meta"></div>
+            </div>
+
+            <div class="season-picker">
+                <label for="downloadedSeasonSelect">Season</label>
+                <select id="downloadedSeasonSelect"></select>
+            </div>
+
+            <div id="downloadedEpisodeList" class="season-episodes"></div>
+        </section>
+    </main>
+
+    <script src="downloaded-series.js"></script>
+</body>
+</html>
